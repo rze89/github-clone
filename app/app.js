@@ -1,0 +1,1 @@
+ghApp = angular.module('ghApp', []);

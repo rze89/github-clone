@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="ghApp">
+
+    <head>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <link href="styles/styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">GithubProfiles</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div ng-controller="profileCtrl">
+                <br />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-md-offset-1">
+                            <input type="text" ng-model="searchParam" class="form-control" placeholder="Enter Github profile names here..." />
+                            <button type="button" class="btn btn-default" ng-click="searchUser(searchParam)">Search</button>
+                        </div>
+                        <br />
+                    </div>
+                    <br />
+                    <div class="row" ng-show="user">
+                        <div class="col-md-3 col-md-offset-1">
+                            <img class="avatar-img" ng-src="{{user.avatar_url}}" />
+                            <br />
+                            <div>
+                                <!--name,login, and job title-->
+                                <h2>{{user.name}}</h2>
+                                <h3>{{user.login}}</h3>
+                                <h4>{{user.bio}}</h4>
+                            </div>
+                            <br />
+                            <div>
+                                <!--location and join date-->
+                                <span>{{user.location}}</span>
+                                <br />
+                                <span>{{user.created_at}}</span>
+                            </div>
+                            <br />
+                            <div>
+                                <span>{{user.followers}} Followers</span>
+                                <!--TODO: Create service for getting star count-->
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <!--repo list-->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Popular repositories</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div ng-repeat="repo in repos">
+                                        <div class="row">
+                                            <div class="col-md-11">
+                                                <h4>{{repo.name}}</h4>
+                                                <p>{{repo.description}}</p>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div ng-if="repo.description">
+                                                    <br />
+                                                </div>
+                                                <p>{{repo.stargazers_count}} <span class="glyphicon glyphicon-star"></span></p>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+            <script src="app/scripts/angular.min.js"></script>
+            <script src="app/scripts/angular-route.min.js"></script>
+            <script src="app/app.js"></script>
+            <script src="app/services/services.js"></script>
+            <script src="app/controllers/profileCtrl.js"></script>
+    </body>
+
+    </html>
