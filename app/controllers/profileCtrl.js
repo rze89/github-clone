@@ -1,22 +1,20 @@
 'use strict'
 
-ghApp.controller('profileCtrl', function profileCtrlController($http, $scope, ghServices) {
+ghApp.controller('profileCtrl', function profileCtrlController($scope,$routeParams,ghServices,$location) {
 
-    $scope.searchParam;
-    $scope.name = "john";
-    $scope.user;
+    $scope.username = $routeParams.username;
     $scope.repos;
+    $scope.user;
 
-    $scope.searchUser = function (username) {
-        ghServices.getGithubData(username, function (data) {
-            $scope.user = data;
-            $scope.repos = getRepos($scope.user.repos_url);
-        });
-    }
-
-    function getRepos(url) {
-        ghServices.getRepos(url, function (data) {
+    ghServices.getGithubData($scope.username).success(function(data){
+        $scope.user = data;
+        ghServices.getRepos($scope.user.repos_url).success(function(data){
             $scope.repos = data;
         });
+    });
+
+    $scope.goToRepo = function(reponame){
+      $location.path('/user/'+$scope.user.login+"/"+ reponame);
     }
+
 });

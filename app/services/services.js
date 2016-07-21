@@ -1,23 +1,18 @@
 ghApp.factory('ghServices', function ($http, $log) {
 
-    var path = 'https://api.github.com/users/';
+    var userPath = 'https://api.github.com/users/';
+    var repoPath = 'https://api.github.com/repos/'
 
     return {
-        getGithubData(name, successCB) {
-            $http.get(path + name)
-                .success(function (data) {
-                    return successCB(data);
-                }).error(function (data) {
-                    $log.warn(data);
-                });
+        getGithubData(name) {
+          return $http.get(userPath + name);
+
         },
-        getRepos(url, successCB) {
-            $http.get(url)
-                .success(function (data) {
-                    return successCB(data);
-                }).error(function (data) {
-                    $log.warn(data);
-                });
+        getRepos(url) {
+          return $http.get(url);
+        },
+        getRepo(username, reponame){
+          return $http.get(repoPath + username + '/' + reponame);
         }
     }
 });

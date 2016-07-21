@@ -1,1 +1,1 @@
-ghApp = angular.module('ghApp', []);
+ghApp = angular.module('ghApp', ['ngRoute']);
