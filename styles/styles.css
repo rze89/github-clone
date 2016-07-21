@@ -16,3 +16,7 @@ body {
     height: 230px;
     border-radius: 10px;
 }
+
+.profile-stats{
+  text-align: center;
+}

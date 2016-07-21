@@ -5,5 +5,12 @@
         <h3>{{repo.owner.login}}/{{repo.name}}</h3>
       </div>
     </div>
+    <div class="panel">
+      <div class="panel-heading">
+        <ul ng-repeat="language in languages">
+          <li>{{language.name}}:{{language.percent}}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

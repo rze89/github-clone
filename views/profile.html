@@ -18,22 +18,22 @@
                     <span>{{user.created_at}}</span>
                 </div>
                 <br />
-                <div class="row">
+                <div class="row profile-stats pull-left">
                     <div class="col-md-4">
-                        <span>{{user.followers}}</span>
-                        <br> Followers
+                        <h4>{{user.followers}}</h4>
+                         Followers
                     </div>
                     <div class="col-md-4">
-                        <span>{{totalStars}}</span>
-                        <br> Stars
+                        <h4>{{totalStars}}</h4>
+                       Stars
                     </div>
                     <div class="col-md-4">
-                        <span>{{totalFollowing}}</span>
-                        <br> Following
+                        <h4>{{totalFollowing}}</h4>
+                        Following
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Repositories</h3>
@@ -49,7 +49,7 @@
                                     <div ng-if="repo.description">
                                         <br />
                                     </div>
-                                    <p>{{repo.stargazers_count}} <span class="glyphicon glyphicon-star"></span></p>
+                                    <p>{{repo.stargazers_count}} <i class="fa fa-star" aria-hidden="true"></i></p>
                                 </div>
                             </div>
                             <hr />

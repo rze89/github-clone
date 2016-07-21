@@ -15,6 +15,9 @@ ghApp.factory('ghServices', function ($http, $log) {
         },
         getFollowing(username){
           return $http.get(userPath + username + '/' + 'following');
+        },
+        getLanguages(url){
+          return $http.get(url);
         }
     }
 });
