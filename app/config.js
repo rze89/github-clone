@@ -12,5 +12,9 @@ ghApp.config(['$routeProvider', function($routeProvider){
       when('/user/:username/:reponame', {
         templateUrl:'views/repo.html',
         controller:'repoCtrl'
+      }).
+      when('/error/:username',{
+        templateUrl: 'views/error.html',
+        controller:'errorCtrl'
       });
 }]);

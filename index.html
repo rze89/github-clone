@@ -17,11 +17,11 @@
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#/">GithubProfiles</a>
-                    <form class="navbar-form navbar-left" role="search">
+                    <form class="navbar-form navbar-left" role="search" ng-show="!clearSearchNav('/')">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search" ng-model="searchParam">
                         </div>
-                        <button type="submit" class="btn btn-default" ng-click="searchUser()">Submit</button>
+                        <button type="submit" class="btn btn-default" ng-click="searchUser();">Submit</button>
                     </form>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     </button>
@@ -40,6 +40,7 @@
     <script src="app/controllers/mainCtrl.js"></script>
     <script src="app/controllers/profileCtrl.js"></script>
     <script src="app/controllers/repoCtrl.js"></script>
+    <script src="app/controllers/errorCtrl.js"></script>
 </body>
 
 </html>
