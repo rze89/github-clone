@@ -11,12 +11,12 @@
             <div class="col-md-8 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Repo Information</h4>
+                        <h4>Repo information</h4>
                     </div>
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="panel panel-danger">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Languages</h3>
                                     </div>
@@ -27,26 +27,67 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="panel panel-danger">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Stargazers</h3>
+                                        <h3 class="panel-title">Activity</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <h1 class="align-middle">{{repo.stargazers_count}} <i class="fa fa-star" aria-hidden="true"></i></h1>
+                                        <ul class="list-group">
+                                            <li class="list-group-item">Created: {{created_at}}</li>
+                                            <br>
+                                            <li class="list-group-item">Updated: {{updated_at}}</li>
+                                            <br>
+                                            <li class="list-group-item">Pushed: {{pushed_at}}</li>
+                                            <br>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="panel panel-danger">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Watchers</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        <h1 class="align-middle">{{repo.watchers_count}} <i class="fa fa-eye" aria-hidden="true"></i></h1>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-3">
+                              <div class="panel panel-primary">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Forks</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <h1 class="align-middle">{{repo.forks_count}} <i class="fa fa-code-fork" aria-hidden="true"></i></h1>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="panel panel-primary">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Open Issues</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <h1 class="align-middle">{{repo.open_issues_count}} <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></h1>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="panel panel-primary">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Stargazers</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <h1 class="align-middle">{{repo.stargazers_count}} <i class="fa fa-star" aria-hidden="true"></i></h1>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="panel panel-primary">
+                                  <div class="panel-heading">
+                                      <h3 class="panel-title">Watchers</h3>
+                                  </div>
+                                  <div class="panel-body">
+                                      <h1 class="align-middle">{{repo.watchers_count}} <i class="fa fa-eye" aria-hidden="true"></i></h1>
+                                  </div>
+                              </div>
+                          </div>
                         </div>
                     </div>
                 </div>
