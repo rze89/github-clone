@@ -1,16 +1,56 @@
 <div ng-controller="repoCtrl">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h3>{{repo.owner.login}}/{{repo.name}}</h3>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <h2>{{repo.owner.login}}/{{repo.name}}</h2>
+                <a class="btn btn-success" href="{{repo.html_url}}">View on Github</a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Repo Information</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Languages</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <ul class="list-group" ng-repeat="language in languages">
+                                            <li class="list-group-item">{{language.name}}: {{language.percent}}%</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Stargazers</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h1 class="align-middle">{{repo.stargazers_count}} <i class="fa fa-star" aria-hidden="true"></i></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-danger">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Watchers</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h1 class="align-middle">{{repo.watchers_count}} <i class="fa fa-eye" aria-hidden="true"></i></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="panel">
-      <div class="panel-heading">
-        <ul ng-repeat="language in languages">
-          <li>{{language.name}}:{{language.percent}}</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>

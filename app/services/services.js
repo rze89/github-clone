@@ -5,19 +5,19 @@ ghApp.factory('ghServices', function ($http, $log) {
 
     return {
         getGithubData(name) {
-          return $http.get(userPath + name);
+          return $http.get(userPath + name, {cache:true});
         },
         getRepos(url) {
-          return $http.get(url);
+          return $http.get(url, {cache:true});
         },
         getRepo(username, reponame){
-          return $http.get(repoPath + username + '/' + reponame);
+          return $http.get(repoPath + username + '/' + reponame, {cache:true});
         },
         getFollowing(username){
-          return $http.get(userPath + username + '/' + 'following');
+          return $http.get(userPath + username + '/' + 'following', {cache: true});
         },
         getLanguages(url){
-          return $http.get(url);
+          return $http.get(url, {cache:true});
         }
     }
 });

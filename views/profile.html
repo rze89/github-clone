@@ -9,32 +9,29 @@
                 <div>
                     <h2>{{user.name}}</h2>
                     <h3>{{user.login}}</h3>
-                    <h4>{{user.bio}}</h4>
                 </div>
                 <br />
                 <div>
-                    <span>{{user.location}}</span>
-                    <br />
-                    <span>{{user.created_at}}</span>
+                    <p>{{user.email}}</p>
+                    <p>{{user.bio}}</p>
+                    <p>{{user.location}}</p>
+
                 </div>
                 <br />
-                <div class="row profile-stats pull-left">
+                <div class="row align-middle pull-left">
                     <div class="col-md-4">
-                        <h4>{{user.followers}}</h4>
-                         Followers
+                        <h4>{{user.followers}}</h4> Followers
                     </div>
                     <div class="col-md-4">
-                        <h4>{{totalStars}}</h4>
-                       Stars
+                        <h4>{{totalStars}}</h4> Stars
                     </div>
                     <div class="col-md-4">
-                        <h4>{{totalFollowing}}</h4>
-                        Following
+                        <h4>{{totalFollowing}}</h4> Following
                     </div>
                 </div>
             </div>
             <div class="col-md-7">
-                <div class="panel panel-default">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">Repositories</h3>
                     </div>
