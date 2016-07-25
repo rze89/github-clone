@@ -1,4 +1,8 @@
-ghApp.config(['$routeProvider', function($routeProvider){
+ghApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+/*$locationProvider.html5Mode({
+  enabled: true,
+  requireBase: true
+});*/
 
     $routeProvider.
       when('/', {
@@ -16,5 +20,9 @@ ghApp.config(['$routeProvider', function($routeProvider){
       when('/error/:username',{
         templateUrl: 'views/error.html',
         controller:'errorCtrl'
-      });
+      }).
+      when('/compare/:username',{
+        templateUrl:'views/compare.html',
+        controller:'compareCtrl'
+      })
 }]);

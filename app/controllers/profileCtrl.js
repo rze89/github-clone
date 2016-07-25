@@ -8,8 +8,10 @@ ghApp.controller('profileCtrl', function profileCtrlController($scope,$routePara
     $scope.totalStars;
     $scope.totalFollowing;
 
+
     ghServices.getGithubData($scope.username).success(function(data){
         $scope.user = data;
+        $scope.link = $scope.user.login
         ghServices.getRepos($scope.user.repos_url).success(function(data){
             $scope.repos = data;
             $scope.totalStars = getTotalStars($scope.repos);
@@ -33,7 +35,10 @@ ghApp.controller('profileCtrl', function profileCtrlController($scope,$routePara
       return count;
     };
 
-
+    $scope.goToCompare = function(){
+      //$location.path('/compare').search('user1', $scope.user.login);
+      $location.path('/compare/' + $scope.user.login)
+    }
 
     $scope.goToRepo = function(reponame){
       $location.path('/user/'+$scope.user.login+"/"+ reponame);

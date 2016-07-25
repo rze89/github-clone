@@ -1,0 +1,89 @@
+<div ng-controller="compareCtrl">
+    <div class="row">
+        <div class="col-md-10">
+            <h1><i class="fa fa-bolt" aria-hidden="true"></i> Comparator</h2>
+        <br>
+        <h4>Use Comparator to compare a selected user profile with another user's profile!After the second user
+        is selected, Comparator will determine who has the better stats and display the victor. What are you waiting for?
+      Find out where you stack up!</h4>
+    </div>
+  </div>
+  <br>
+<div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12">
+              <img class="compare-avatar pull-left"ng-src="{{user.avatar_url}}"/>
+              <h1 class="pull-right">{{user.login}}</h1>
+        </div>
+    </div>
+    <br>
+    <div class="row" ng-show="didCompare">
+        <div class="col-md-12">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h4>Total Repos: {{user1RepoTotal}}</h4></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div>
+        <div class="panel-body">
+            <div ng-hide="user2">
+                <h4 class="align-middle">Select a profile to compare to!</h4>
+                <input type="text" class="form-control" ng-model="searchParam" />
+                <br>
+                <div class="row" ng-show="error">
+                  <div class="col-md-12">
+                    <div>
+                        <h4 class="warning">{{error}}</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <button type="button" class="btn btn-success" ng-click="searchUser()">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="user2">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img class="compare-avatar pull-left" ng-src="{{user2.avatar_url}}" />
+                        <h1 class="pull-right">{{user2.login}}</h1>
+                    </div>
+                </div>
+                <button class="btn btn-default" ng-click="clearUser()">Reset</button>
+                <br>
+                <div class="row" ng-show="didCompare">
+                    <div class="col-md-12">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h4>Total Repos: {{user2RepoTotal}}</h4></li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-default" ng-click="clearUser">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 col-md-offset-3">
+        <div class="btn-group btn-group-justified">
+            <button class="btn btn-default btn-lg btn-block">Compare</button>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>

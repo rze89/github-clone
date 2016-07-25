@@ -16,7 +16,12 @@ body {
     height: 230px;
     border-radius: 10px;
 }
-
+.compare-avatar{
+  margin-left: 10px;;
+  width:75px;
+  height:75px;
+  border-radius: 5px;
+}
 .align-middle{
   text-align: center;
 }
