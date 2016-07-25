@@ -26,13 +26,21 @@
         <div class="col-md-12">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <h4>Total Repos: {{user1RepoTotal}}</h4></li>
+                    <h4>Total Repos: {{user1RepoTotal}}</h4>
+                </li>
+                <li class="list-group-item">
+                    <h4> Total Stars: {{user1TotalStars}}</h4>
+                </li>
+                <li class="list-group-item">
+                    <h4>  {{user1totalFollowing}}</h4>
+                </li>
             </ul>
         </div>
     </div>
 </div>
 </div>
 </div>
+<!-- USER 2 PANEL -->
 <div class="col-md-4">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -43,11 +51,11 @@
                 <input type="text" class="form-control" ng-model="searchParam" />
                 <br>
                 <div class="row" ng-show="error">
-                  <div class="col-md-12">
-                    <div>
-                        <h4 class="warning">{{error}}</h4>
+                    <div class="col-md-12">
+                        <div>
+                            <h4 class="warning">{{error}}</h4>
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
@@ -62,16 +70,27 @@
                         <h1 class="pull-right">{{user2.login}}</h1>
                     </div>
                 </div>
-                <button class="btn btn-default" ng-click="clearUser()">Reset</button>
                 <br>
+                <!--<div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-default pull-right" ng-click="clearUser()">Reset</button>
+                  </div>
+                </div>
+                <br>-->
                 <div class="row" ng-show="didCompare">
                     <div class="col-md-12">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <h4>Total Repos: {{user2RepoTotal}}</h4></li>
+                                <h4>Total Repos: {{user2RepoTotal}}</h4>
+                            </li>
+                            <li class="list-group-item">
+                                <h4> Total Stars: {{user2TotalStars}}</h4>
+                            </li>
+                            <li class="list-group-item">
+                                <h4>  {{user2totalFollowing}}</h4>
+                            </li>
                         </ul>
                     </div>
-                    <button class="btn btn-default" ng-click="clearUser">Reset</button>
                 </div>
             </div>
         </div>
@@ -79,10 +98,9 @@
 </div>
 <div class="row">
     <div class="col-md-4 col-md-offset-3">
-        <div class="btn-group btn-group-justified">
-            <button class="btn btn-default btn-lg btn-block">Compare</button>
-
-        </div>
+            <button class="btn btn-default btn-lg btn-block" ng-click="compare()">Compare</button>
+            <br>
+            <button class="btn btn-default btn-lg btn-block pull-right" ng-click="clearUser()" ng-show="user2">Reset</button>
     </div>
 </div>
 </div>
