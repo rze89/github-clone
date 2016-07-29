@@ -15,7 +15,6 @@
                     <p>{{user.email}}</p>
                     <p>{{user.bio}}</p>
                     <p>{{user.location}}</p>
-
                 </div>
                 <br />
                 <div class="row align-middle pull-left">
@@ -28,8 +27,9 @@
                     <div class="col-md-4">
                         <h4>{{totalFollowing}}</h4> Following
                     </div>
+                    <button type="button" class="btn btn-default" ng-click="goToCompare()">Compare</button>
                 </div>
-                <button type="button" class="btn btn-default" ng-click="goToCompare()">Compare</button>
+                <br>
             </div>
             <div class="col-md-7">
                 <div class="panel panel-success">
