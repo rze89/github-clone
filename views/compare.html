@@ -27,6 +27,12 @@
             <div ng-if="user1Obj.winner">
                 <h1 class="text-align text-success">WINNER</h1>
             </div>
+            <div ng-if="user2Obj.winner">
+                <h1 class="text-align text-danger">LOSER</h1>
+            </div>
+            <div ng-if="tie">
+                <h1 class="text-align text-danger">TIE</h1>
+            </div>
             <ul class="list-group">
                 <li class="list-group-item">
                     <h4>Total Repos: {{user1Obj.repoCount}}</h4>
@@ -88,6 +94,12 @@
                     <div class="col-md-12">
                         <div ng-if="user2Obj.winner">
                             <h1 class="text-align text-success">WINNER</h1>
+                        </div>
+                        <div ng-if="user1Obj.winner">
+                            <h1 class="text-align text-danger">LOSER</h1>
+                        </div>
+                        <div ng-if="tie">
+                            <h1 class="text-align text-danger">TIE</h1>
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">
