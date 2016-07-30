@@ -35,7 +35,13 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <h4>Total Repos: {{user1Obj.repoCount}}</h4>
+                    <h4>Total Repos:
+                      <!--<span ng-class="{'winner':user1Obj.repoCount > user2Obj.repoCount,
+                        'loser': user2Obj.repoCount > user1Obj.repoCount}">
+                        {{user1Obj.repoCount}}
+                      </span>-->
+                      {{user1Obj.repoCount}}
+                    </h4>
                 </li>
                 <li class="list-group-item">
                     <h4> Total Stars: {{user1Obj.stars}}</h4>
