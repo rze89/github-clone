@@ -10,8 +10,10 @@ ghApp.controller('compareCtrl', function compareCtrlController($scope, ghService
             login: "",
             stars: "",
             repoCount: "",
+            followers:"",
             following: "",
             repos: "",
+            created_date:"",
             winner: false
         };
 
@@ -19,8 +21,10 @@ ghApp.controller('compareCtrl', function compareCtrlController($scope, ghService
         ghServices.getRepos($scope.user.repos_url).success(function(data) {
             $scope.user1Obj.repos = data;
             $scope.user1Obj.login = $scope.user.login;
+            $scope.user1Obj.followers = $scope.user.followers;
             $scope.user1Obj.repoCount = repoCount($scope.user1Obj.repos);
             $scope.user1Obj.stars = getTotalStars($scope.user1Obj.repos);
+            $scope.user1Obj.created_date = formatDate($scope.user.created_at);
         });
         ghServices.getFollowing($scope.user.login).success(function(data) {
             var temp = data;
@@ -40,7 +44,7 @@ ghApp.controller('compareCtrl', function compareCtrlController($scope, ghService
     $scope.compare = function(user1, user2) {
         $scope.didCompare = true;
         $scope.tie = false;
-        var proplist = ["repoCount","stars","following"];
+        var proplist = ["repoCount","stars","followers","following","created_date"];
         var user1Count= 0;
         var user2Count = 0;
 
@@ -69,8 +73,10 @@ ghApp.controller('compareCtrl', function compareCtrlController($scope, ghService
             login: "",
             stars: "",
             repoCount: "",
+            followers:"",
             following: "",
             repos: "",
+            created_date:"",
             winner: false
         };
 
@@ -79,8 +85,10 @@ ghApp.controller('compareCtrl', function compareCtrlController($scope, ghService
             ghServices.getRepos($scope.user2.repos_url).success(function(data) {
                 $scope.user2Obj.repos = data;
                 $scope.user2Obj.login = $scope.user2.login;
+                $scope.user2Obj.followers = $scope.user2.followers;
                 $scope.user2Obj.repoCount = repoCount($scope.user2Obj.repos);
                 $scope.user2Obj.stars = getTotalStars($scope.user2Obj.repos);
+                $scope.user2Obj.created_date = formatDate($scope.user2.created_at);
             });
             ghServices.getFollowing($scope.user2.login).success(function(data) {
                 var temp = data;
@@ -107,6 +115,14 @@ ghApp.controller('compareCtrl', function compareCtrlController($scope, ghService
             count++;
         });
         return count;
+    };
+
+    function formatDate(date){
+      var tempDate = moment(date.toString()).format('MMMM-DD-YYYY');
+      //var tempTime = moment(date.toString()).format('h:mm a');
+      var result = tempDate; //+ " at " + tempTime;
+
+      return result;
     };
 
 });
