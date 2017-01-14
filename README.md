@@ -10,6 +10,7 @@ of comparing, Comparator will declare a winner between the two users. In the eve
 ###Installation & Usage
 1. Clone this repo
 2. If you don't have the ```http-server``` npm package already, install it globally
+    
     ```npm install http-server -g```
 3. ```cd``` into the directory where you are keeping the project
 4. run ```http-server``` from the command line
