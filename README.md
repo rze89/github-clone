@@ -7,4 +7,10 @@ While Github Comparator allows users to search for profiles and view repo detail
 **Comparator**. Comparator will look at both users' overall profile stats and performs a comparison of the two. Upon completeion
 of comparing, Comparator will declare a winner between the two users. In the event of profiles having an equal score, a tie will be decalred.
 
-###Installation
+###Installation & Usage
+1. Clone this repo
+2. If you don't have the ```http-server``` npm package already, install it globally
+    ```npm install http-server -g```
+3. ```cd``` into the directory where you are keeping the project
+4. run ```http-server``` from the command line
+5. navigate to the address it provides in the terminal
