@@ -2,21 +2,23 @@
 
 ghApp.controller('mainCtrl', function mainCtrlController(ghServices, $scope, $location) {
 
-  $scope.searchParam;
-  $scope.username;
+    $scope.searchParam;
+    $scope.username;
 
-    $scope.clearSearchNav = function(view){
-      if(view === $location.path()){
-        return true;
-      }
+    $scope.clearSearchNav = function (view) {
+        if (view === $location.path()) {
+            return true;
+        }
         return false;
     };
 
     $scope.searchUser = function(){
-      if($scope.searchParam !== null){
-        $location.path('user/' + $scope.searchParam);
-      }
-        $scope.searchParam = "";
+        if($scope.searchParam){
+            ghServices.getGithubData($scope.searchParam).success(function(data){
+                $location.path('user/' + $scope.searchParam);
+            }).error(function(){
+                $location.path('/error/'+ $scope.searchParam);
+            })
+        }
     };
-
 });

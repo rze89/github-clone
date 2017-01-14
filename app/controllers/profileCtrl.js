@@ -16,8 +16,6 @@ ghApp.controller('profileCtrl', function profileCtrlController($scope,$routePara
             $scope.repos = data;
             $scope.totalStars = getTotalStars($scope.repos);
         });
-    }).error(function(data){
-        $location.path('/error/'+ $scope.username);
     });
 
     ghServices.getFollowing($scope.username).success(function(data){
