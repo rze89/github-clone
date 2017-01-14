@@ -13,5 +13,5 @@ of comparing, Comparator will declare a winner between the two users. In the eve
     
     ```npm install http-server -g```
 3. ```cd``` into the directory where you are keeping the project
-4. run ```http-server``` from the command line
-5. navigate to the address it provides in the terminal
+4. Run ```http-server``` from the command line
+5. Navigate to the address it provides in the terminal
