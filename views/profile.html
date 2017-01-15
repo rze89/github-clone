@@ -28,28 +28,30 @@
                         <h4>{{totalFollowing}}</h4> Following
                     </div>
                     <div class="col-md-12">
-                        <button type="button" class="btn btn-default btn-lg btn-block compare-button" ng-click="goToCompare()">Compare</button>
+                        <button type="button" class="btn btn-success btn-lg btn-block compare-button" ng-click="goToCompare()">Compare</button>
                     </div>
                 </div>
                 <br>
             </div>
-            <div class="col-md-7">
-                <div class="panel panel-success">
+            <div class="col-md-6">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Repositories</h3>
                     </div>
                     <div class="panel-body">
                         <div ng-repeat="repo in repos">
-                            <div class="row" ng-click="goToRepo(repo.name)">
-                                <div class="col-md-11">
-                                    <h4><span class="highlight hover-hand">{{repo.name}}</span></h4>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <h4><span class="highlight hover-hand" ng-click="goToRepo(repo.name)">{{repo.name}}</span></h4>
                                     <p>{{repo.description}}</p>
                                 </div>
-                                <div class="col-md-1">
+                                <div class="col-md-2">
                                     <div ng-if="repo.description">
                                         <br />
                                     </div>
+                                    <div class="pull-right">
                                     <p>{{repo.stargazers_count}} <i class="fa fa-star" aria-hidden="true"></i></p>
+                                    </div>
                                 </div>
                             </div>
                             <hr />

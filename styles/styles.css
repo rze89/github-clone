@@ -11,6 +11,12 @@ body {
 .hover-hand{
     cursor: pointer;
 }
+
+.hover-hand:hover{
+    border-bottom: 2px solid;
+    border-color: #333333;
+}
+
 .navbar-brand{
   padding-left: 30px;
 }
@@ -33,4 +39,11 @@ body {
 }
 .loser{
   color:red;
+}
+h1{
+    color: #555555;
+}
+#error{
+    margin-top: 25px;
+    font-size: 200px;
 }
