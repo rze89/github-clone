@@ -12,10 +12,8 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
+                                <h3>Languages</h3>
                                 <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Languages</h3>
-                                    </div>
                                     <div class="panel-body">
                                         <ul class="list-group" ng-repeat="language in languages">
                                             <li class="list-group-item">{{language.name}}: {{language.percent}}%</li>
@@ -26,10 +24,8 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
+                                <h3>Activity</h3>
                                 <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">Activity</h3>
-                                    </div>
                                     <div class="panel-body">
                                         <ul class="list-group">
                                             <li class="list-group-item">Created: {{created_at}}</li>
@@ -45,40 +41,32 @@
                         </div>
                         <div class="row">
                           <div class="col-md-3">
+                              <h4 class="align-middle">Forks</h4>
                               <div class="panel panel-primary">
-                                  <div class="panel-heading">
-                                      <h3 class="panel-title">Forks</h3>
-                                  </div>
                                   <div class="panel-body">
                                       <h1 class="align-middle">{{repo.forks_count}} <i class="fa fa-code-fork" aria-hidden="true"></i></h1>
                                   </div>
                               </div>
                           </div>
                           <div class="col-md-3">
+                              <h4 class="align-middle">Open Issues</h4>
                               <div class="panel panel-primary">
-                                  <div class="panel-heading">
-                                      <h3 class="panel-title">Open Issues</h3>
-                                  </div>
                                   <div class="panel-body">
                                       <h1 class="align-middle">{{repo.open_issues_count}} <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></h1>
                                   </div>
                               </div>
                           </div>
                           <div class="col-md-3">
+                              <h4 class="align-middle">Stargazers</h4>
                               <div class="panel panel-primary">
-                                  <div class="panel-heading">
-                                      <h3 class="panel-title">Stargazers</h3>
-                                  </div>
                                   <div class="panel-body">
                                       <h1 class="align-middle">{{repo.stargazers_count}} <i class="fa fa-star" aria-hidden="true"></i></h1>
                                   </div>
                               </div>
                           </div>
                           <div class="col-md-3">
+                              <h4 class="align-middle">Watchers</h4>
                               <div class="panel panel-primary">
-                                  <div class="panel-heading">
-                                      <h3 class="panel-title">Watchers</h3>
-                                  </div>
                                   <div class="panel-body">
                                       <h1 class="align-middle">{{repo.watchers_count}} <i class="fa fa-eye" aria-hidden="true"></i></h1>
                                   </div>

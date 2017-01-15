@@ -40,7 +40,7 @@ body {
 .loser{
   color:red;
 }
-h1{
+h1, h2, h3, h4{
     color: #555555;
 }
 #error{
